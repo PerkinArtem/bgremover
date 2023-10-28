@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BGremover</title>
+
+    <link rel="stylesheet" href="./css/common.css">
+  </head>
+  <body>
+    <div class="app bg-blue-100 min-h-screen py-10 md:py-20 px-6">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-semibold mb-2">BGremover 1.0</h1>
+        <p>Upload your image to remove background.</p>
+      </div>
+
+      <div class="shadow-md bg-white rounded-md p-4 min-h-[300px] max-w-lg mx-auto flex flex-col items-center justify-center text-center">
+        <div id="upload-empty" class="flex flex-col items-center">
+          <div class="text-gray-500 mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+          </div>
+          <label>
+            <div id="upload-button" class="bg-cyan-700 hover:bg-cyan-800 active:scale-95 transition-all text-white rounded-md py-2 px-4 font-medium cursor-pointer">Upload image</div>
+            <input id="upload-input" type="file" class="hidden" accept="image/png, image/jpg, image/jpeg, image/webp">
+          </label>
+          <span class="mt-2 inline-block text-sm text-gray-500">PNG | JPEG | WEBP</span>
+        </div>
+        <div id="upload-processing" class="relative w-full" style="display: none;">
+          <div class="absolute left-0 top-0 w-full h-full backdrop-blur-sm bg-white/30 flex flex-col items-center justify-center text-center font-medium">
+            <img src="/loader.gif" alt="loader" class="mb-2" width="50" height="50">
+            <span id="upload-processing-loader">Processing...</span>
+          </div>
+          <img id="image-preview" src="/empty.png" data-src="/empty.png" alt="preview" class="object-cover w-full border border-gray-500">
+        </div>
+        <div id="result" class="w-full" style="display: none;">
+          <img id="image-result" src="/empty.png" alt="result" class="object-cover w-full border border-gray-500">
+          <a 
+            id="button-download"
+            download
+            href=""
+            class="bg-cyan-700 hover:bg-cyan-800 active:scale-95 transition-all text-white rounded-md py-2 px-4 font-medium cursor-pointer inline-block mt-2"
+          >
+            Download
+          </a>
+        </div>
+      </div>
+      <div id="block-restart" class="mx-auto text-center pt-2" style="display: none;">
+        <button 
+          class="border border-2 border-cyan-700 hover:bg-cyan-800 hover:border-cyan-800 hover:text-white active:scale-95 transition-all text-cyan-700 rounded-md py-2 px-4 font-medium cursor-pointer inline-block mt-2"
+          onclick="window.location.reload()"
+          >
+        Restart
+      </button>
+      </div>
+    </div>
+
+    <script type="module" src="./js/common.js"></script>
+  </body>
+</html>
