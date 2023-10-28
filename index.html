@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/bgremover/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BGremover</title>
 
-    <link rel="stylesheet" href="./css/common.css">
+    
+    <script type="module" crossorigin src="/bgremover/assets/index-96c972e8.js"></script>
+    <link rel="stylesheet" href="/bgremover/assets/index-4878e116.css">
   </head>
   <body>
     <div class="app bg-blue-100 min-h-screen py-10 md:py-20 px-6">
@@ -28,13 +30,13 @@
         </div>
         <div id="upload-processing" class="relative w-full" style="display: none;">
           <div class="absolute left-0 top-0 w-full h-full backdrop-blur-sm bg-white/30 flex flex-col items-center justify-center text-center font-medium">
-            <img src="/loader.gif" alt="loader" class="mb-2" width="50" height="50">
+            <img src="/bgremover/loader.gif" alt="loader" class="mb-2" width="50" height="50">
             <span id="upload-processing-loader">Processing...</span>
           </div>
-          <img id="image-preview" src="/empty.png" data-src="/empty.png" alt="preview" class="object-cover w-full border border-gray-500">
+          <img id="image-preview" src="/bgremover/empty.png" data-src="/empty.png" alt="preview" class="object-cover w-full border border-gray-500">
         </div>
         <div id="result" class="w-full" style="display: none;">
-          <img id="image-result" src="/empty.png" alt="result" class="object-cover w-full border border-gray-500">
+          <img id="image-result" src="/bgremover/empty.png" alt="result" class="object-cover w-full border border-gray-500">
           <a 
             id="button-download"
             download
@@ -55,6 +57,6 @@
       </div>
     </div>
 
-    <script type="module" src="./js/common.js"></script>
+    
   </body>
 </html>
